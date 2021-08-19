@@ -9,7 +9,7 @@ function preorderTraversal(root){
   let nodes = [];
 
   const preOrder = (node) => {
-    nodes.push(node.value);
+    nodes.push(node.val);
 
     if(node.left){
       preOrder(node.left);
