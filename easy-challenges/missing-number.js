@@ -3,18 +3,29 @@
 //Note: Gauss' law of summation: sum of sequence (up to n) = n(n+1)/2
 
 //Using set and built in methods
+// function missingNumber(nums){
+//   let check = new Set();
+//   for(let i = 0; i < nums.length; i++){
+//     check.add(nums[i]);
+//   }
+//   for(let i = 0; i <= nums.length; i++){
+//     let result = check.has(i);
+//     if(!result){
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
 function missingNumber(nums){
-  let check = new Set();
+  let expectedSum = (nums.length*(nums.length + 1))/2;
+
+  let sum = 0;
   for(let i = 0; i < nums.length; i++){
-    check.add(nums[i]);
+    sum += nums[i];
   }
-  for(let i = 0; i <= nums.length; i++){
-    let result = check.has(i);
-    if(!result){
-      return i;
-    }
-  }
-  return -1;
+
+  return expectedSum - sum;
 }
 
 console.log(missingNumber([0,1,3]));
