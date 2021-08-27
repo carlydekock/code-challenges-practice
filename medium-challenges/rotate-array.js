@@ -7,6 +7,7 @@
 // rotate 2 steps to the right: [6,7,1,2,3,4,5]
 // rotate 3 steps to the right: [5,6,7,1,2,3,4]
 //Note: on Leetcode, does not return anything, supposed to modify nums in place
+//Resource: https://www.youtube.com/watch?v=lTHTR_jsqAQ&ab_channel=FisherCoder
 
 function rotate(nums, k){
   let length = nums.length;
