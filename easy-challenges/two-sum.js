@@ -10,20 +10,41 @@
 //You may assume that each input would have exactly one solution, and you may not use the same element twice.
 //You can return the answer in any order.
 
+// function twoSum(nums, target){
+//   let numsIndex = {};
+//   let result = [];
+
+//   for(let i = 0; i < nums.length; i++){
+//     let currentNum = nums[i];
+//     let currentDifference = target - currentNum;
+
+//     if(numsIndex[currentDifference] !== undefined && numsIndex[currentDifference] !== i){
+//       result[0] = numsIndex[currentDifference];
+//       result[1] = i;
+//     }
+//     numsIndex[currentNum] = i;
+//     // console.log(numsIndex);
+//   }
+//   return result;
+// }
+
 function twoSum(nums, target){
-  numsIndexes = {};
+  let numsIndex = new Map();
+  let result = [];
 
   for(let i = 0; i < nums.length; i++){
-    let currentDifference = target - nums[i];
-    // console.log('nums[i]', nums[i]);
-    // console.log('difference', currentDifference);
-    // console.log('indexes', numsIndexes);
-    if(numsIndexes[currentDifference] !== undefined && numsIndexes[currentDifference] !== i){
-      return [i, numsIndexes[currentDifference]];
-    } else{
-      numsIndexes[nums[i]] = i;
+    let currentNum = nums[i];
+    let currentDifference = target - currentNum;
+
+    if(numsIndex.has(currentDifference)){
+      console.log('inside');
+      result[0] = numsIndex.get(currentDifference);
+      result[1] = i;
+      return result;
     }
+    numsIndex.set(currentNum, i);
   }
 }
 
-console.log(twoSum([1,2,3,4,5], 9));
+
+console.log(twoSum([2,7,11,15], 9));
