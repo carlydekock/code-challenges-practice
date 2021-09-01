@@ -37,7 +37,6 @@ function twoSum(nums, target){
     let currentDifference = target - currentNum;
 
     if(numsIndex.has(currentDifference)){
-      console.log('inside');
       result[0] = numsIndex.get(currentDifference);
       result[1] = i;
       return result;
