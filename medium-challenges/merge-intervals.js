@@ -18,12 +18,9 @@ function merge(intervals){
   for(let i = 1; i < intervals.length; i++){
     let nextBegin = intervals[i][0];
     let nextEnd = intervals[i][1];
-    console.log('current', currentBegin, currentEnd);
-    console.log('next', nextBegin, nextEnd);
     if(currentEnd >= nextBegin && currentEnd < nextEnd){
       merged[index][1] = nextEnd;
       currentEnd = nextEnd;
-      console.log('inside this', merged);
     } else if(currentEnd < nextBegin){
       merged.push(intervals[i]);
       currentBegin = intervals[i][0];
