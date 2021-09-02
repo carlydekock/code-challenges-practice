@@ -10,32 +10,56 @@
 //Once becomes invalid - remove characters from the left until valid again
 //Continue until R hits the end
 
+// function longestRepeatingCharacters(s, k){
+//   //two pointers and overall count
+//   let left = 0;
+//   let right = 0;
+//   let maxCount = 0;
+//   let letterCount = {};
+
+//   while(right < s.length){
+//     let currentLetter = s.charAt(right);
+//     if(letterCount[currentLetter]){
+//       letterCount[currentLetter]++;
+//     } else {
+//       letterCount[currentLetter] = 1;
+//     }
+
+//     if(letterCount[currentLetter] > maxCount){
+//       maxCount = letterCount[currentLetter];
+//     }
+
+//     if((right - left + 1) - maxCount > k){
+//       letterCount[s.charAt(left)]--;
+//       left++;
+//     }
+//     right++;
+//   }
+//   return right - left;
+// }
+
 function longestRepeatingCharacters(s, k){
-  //two pointers and overall count
   let left = 0;
-  let right = 0;
   let maxCount = 0;
   let letterCount = {};
 
-  while(right < s.length){
+  for(let right = 0; right < s.length; right++){
     let currentLetter = s.charAt(right);
-    if(letterCount[currentLetter]){
-      letterCount[currentLetter]++;
-    } else {
+    if(!letterCount[currentLetter]){
       letterCount[currentLetter] = 1;
+    } else {
+      letterCount[currentLetter]++;
     }
-
-    if(letterCount[currentLetter] > maxCount){
-      maxCount = letterCount[currentLetter];
-    }
-
-    if((right - left + 1) - maxCount > k){
+    let count = Object.values(letterCount);
+    maxCount = Math.max(...count);
+    if(((right - left + 1) - maxCount) > k){
       letterCount[s.charAt(left)]--;
       left++;
     }
-    right++;
+    maxCount = Math.max(maxCount, (right - left + 1));
   }
-  return right - left;
+  return maxCount;
+
 }
 
 console.log(longestRepeatingCharacters('ABAB', 2));
