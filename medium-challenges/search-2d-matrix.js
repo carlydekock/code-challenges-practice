@@ -27,7 +27,6 @@ function searchMatrix(matrix, target){
     lastValue = currentRow[matrix[i].length - 1];
     let left = 0;
     let right = currentRow.length - 1;
-    console.log(firstValue, lastValue);
     if(firstValue === target || lastValue === target){
       return true;
     } else if(firstValue < target && lastValue < target){
@@ -36,12 +35,10 @@ function searchMatrix(matrix, target){
       return false;
     } else if(firstValue < target && lastValue > target){
       while(left < right){
-        console.log('inside while', left, right);
         if(currentRow[left] === target || currentRow[right] === target){
           return true;
         } else if(currentRow[left] < target && currentRow[right] > target){
           left++;
-          // right--;
         } else {
           return false;
         }
