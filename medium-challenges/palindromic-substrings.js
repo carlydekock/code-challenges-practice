@@ -34,3 +34,10 @@ function countSubstrings(s){
 console.log(countSubstrings('abc'));
 console.log(countSubstrings('aaa'));
 
+//Summary:
+//Given a string s, find a total count of all the possible palindromes from letters within string s. 
+//Pattern: Like a usual palindrome function, have two pointers (left and right) that compare and ensure the letters are the same
+//Key is that need to do this starting with one letter, adding on to L and R on each side (this handles odd sized palindromes -> 1, 3, 5)
+//Also need to do this starting with two letters, adding on to the L and R on each side (this handles even sized palindromes -> 2, 4, 6)
+//More on patter: for loop to iterate over all of the array, with while loops inside to test the various substring options of whether they are palindromes as well or not
+//Big O: O(n^2)
