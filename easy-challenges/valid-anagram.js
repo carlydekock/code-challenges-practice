@@ -30,3 +30,7 @@ function isAnagram(s, t){
 
 // console.log(isAnagram('anagram', 'nagaram'));
 // console.log(isAnagram('rat', 'car'));
+
+//Summary: Set up two maps or objects to track a count of the letters in each string. Iterate through each string letter by letter, add it to the object or update the count at that key. The letters will be the key, and the value will be the count of times the letter is present. Do this for each string, and then compare the two values at each key. If the values don't match for the same key, then it is not an anagram as there are not the same letters in each string.
+//Pattern: Hash map/object to store count of letters, then iterate over the keys/values to check if they match in each map/object or not.
+//Big O: O(n) time, where n is the sum of all letters in s and t. Iterating over all the letters in strings s and t. Space O(n) as well, storing map/object with each letter as key.
