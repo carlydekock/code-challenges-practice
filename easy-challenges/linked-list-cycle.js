@@ -24,3 +24,6 @@ function hasCycle(head){
   }
   return false;
 }
+
+//Summary: With two pointers, we'll traverse the list at different speeds. This works because if there is a cycle in the list we'll keep going around and around, in which the two pointers will eventually meet, indicating a cycle. If they don't meet, then we've traversed the list and there is no cycle.
+//Pattern: Two pointers technique, moving one at a faster pace than the other.
