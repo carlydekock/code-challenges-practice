@@ -35,3 +35,6 @@ console.log(findMin([3,4,5,1,2]));
 console.log(findMin([4,5,6,7,0,1,2]));
 console.log(findMin([11,13,15,17]));
 console.log(findMin([2,1]));
+
+//Summary: Since the array is sorted, and then rotated at an unknown value, we need to figure out where it was rotated, as that will be our minimum value. Key to use binary search by the mention of algorithm that will run in O(log n) time. Starting with pointers at the left and right, calculate mid and determine which side of the array is sorted and which side is not. The side that is not sorted (nums[mid] > nums[right] for example) will tell us that the smallest value is in that side. Key here is that if nums[mid] < nums[mid-1] we know we've found the minimum value, as the number before should not be larger than the currentNum. 
+//Pattern: Two pointers and binary search. 
