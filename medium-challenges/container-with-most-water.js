@@ -22,3 +22,6 @@ function maxArea(height){
 }
 
 console.log(maxArea([1,8,6,2,5,4,8,3,7]));
+
+//Summary: With two pointers at each end and sliding window, we'll keep tabs on the minimum value (limit to our container) and the maxArea thus far (min * length of container). Whichever value is the lowest, which will be the limiting factor to our calculation of maximum value, we'll move past to the next value (either left+ or right--). Tracking the ongoing max value through the array, and reassigning if we come across a combination that is greater than the previous max.
+//Pattern: Two pointers at each end with sliding window in between. Recognizing that the lower value is the limiting factor, so moving left and right according to which is lower. Be sure to have if/else, so that we make sure we are moving no matter what. Ongoing calculation of max, keeping the highest value whether currentMax or previous ongoing value of max.
