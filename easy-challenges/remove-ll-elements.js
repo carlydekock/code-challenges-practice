@@ -28,3 +28,6 @@ function removeElements(head, val){
   return dummy.next;
 }
 
+//Summary: With two pointers (previous and current), iterate through the linked list. Previous will stay one node behind current, and if current.val === val, then the node will be removed and current will move to the next. Otherwise, previous and current move forward one node.
+//Pattern: Two pointers, previous is initialized to a dummy node, dummy.next = head, and current = head. While current !== null, keep traversing, checking if current.val === val. 
+//Note: Remember this needs to be an if/else in the while loop, if we delete a node, then we don't want to move previous, we just want to set current to the new node and check it again (what if we need to delete again). Otherwise, then we want to move both of them forward. 
