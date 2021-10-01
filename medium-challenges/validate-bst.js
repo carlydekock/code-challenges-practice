@@ -28,7 +28,6 @@ function traverseInOrder(root){
   return nodes;
 }
 
-
 function isValidBST(root){
   const values = traverseInOrder(root);
   for(let i = 0; i < values.length-1; i++){
@@ -39,7 +38,20 @@ function isValidBST(root){
   return true;
 }
 
+const validate = (root, max, min) => {
+  if(root === null){
+    return true;
+  } else if(max !== null && root.val >= max || min !== null && root.val <= min){
+    return false;
+  } else {
+    return validate(root.left, root.val, min) && validate(root.right, max, root.val);
+  }
+};
 
+
+function isValidBSTRecursive(root){
+  return validate(root, null, null);
+}
 
 let tree = new Tree();
 tree.root = new TreeNode(4);
@@ -48,3 +60,4 @@ tree.root.left.left = new TreeNode(1);
 tree.root.left.right = new TreeNode(3);
 tree.root.right = new TreeNode(7);
 console.log(isValidBST(tree.root));
+console.log(isValidBSTRecursive(tree.root));
