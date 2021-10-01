@@ -48,7 +48,6 @@ const validate = (root, max, min) => {
   }
 };
 
-
 function isValidBSTRecursive(root){
   return validate(root, null, null);
 }
@@ -61,3 +60,6 @@ tree.root.left.right = new TreeNode(3);
 tree.root.right = new TreeNode(7);
 console.log(isValidBST(tree.root));
 console.log(isValidBSTRecursive(tree.root));
+
+//Summary: One approach, though inefficient, is to do an inOrder traversal of the tree, then check if it is a sorted ascending list of node values, where the next node is greater than the previous. If it is less than or equal to, return false. Another more efficient approach is to recursively validate the left and right sides of the tree, checking each time for root === null (we're at a leaf node) or for a value that is >= max or <= min. 
+//Pattern: BST and recursion.
