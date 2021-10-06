@@ -54,3 +54,4 @@ function findMinDepth(root){
   return depth;
 }
 
+//Summary: To find the minimum depth, or shortest path to a leaf node in the tree, we can use recursion or level order traversal. Using recursion, after we've checked the root, we go into three conditionals -> left and right are null (at a leaf), left is null and need to call minDepth on right, right is null and need to call minDepth on left, then we take the min of results. Iteratively, we can traverse level by level in the tree until we reach the first leaf node, pushing into the stack and shifting off the stack to examine each node. We have a similar set of conditionals - if node === null, if left === null && right === null, if left !== null, if right !== null.
