@@ -25,3 +25,32 @@ function minDepth(root){
   }
   return 1 + Math.min(minDepth(root.left), minDepth(root.right));
 }
+
+function findMinDepth(root){
+  if(root === null){
+    return 0;
+  } 
+  let depth = 1;
+  const stack = [root];
+  while(stack.length > 0){
+    let length = stack.length;
+    for(let i = 0; i < length; i++){
+      const node = stack.shift();
+      if(node === null){
+        return 0;
+      }
+      if(node.left === null && node.right === null){
+        return depth;
+      }
+      if(node.left !== null){
+        stack.push(node.left);
+      }
+      if(node.right !== null){
+        stack.push(node.right);
+      }
+    }
+    depth++;
+  }
+  return depth;
+}
+
