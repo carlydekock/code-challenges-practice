@@ -21,3 +21,5 @@ function findMaxConsecutiveOnes(nums){
 
 console.log(findMaxConsecutiveOnes([1,1,0,1,1,1]));
 
+//Summary: As we iterate through the array, we need a counter variable that counts up the consecutive ones, or resets the count if the number is not a one. After each iteration, we can log the max as max of current max and counter. Once we've iterated through the array, return max.
+//Pattern: For loop iterating through each value, with a count for number of ones consecutive, and an ongoing max.
