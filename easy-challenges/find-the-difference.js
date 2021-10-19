@@ -26,3 +26,6 @@ function findTheDifference(s, t){
 console.log(findTheDifference('abcd', 'abcde'));
 console.log(findTheDifference('', 'y'));
 console.log(findTheDifference('a', 'aa'));
+
+//Summary: Since we know there is one additional letter in t that is not in s, we need to track a count of the letters in both t and s, then compare to find which is the added letter.
+//Pattern: Count/map for letters in each string, iterate through the keys and compare them to see which is different. Two maps/objects for count, then iterate through keys in a for loop.
