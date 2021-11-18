@@ -33,3 +33,6 @@ function minSubArrayLength(target, nums){
 console.log(minSubArrayLength(7, [2,3,1,2,4,3]));
 console.log(minSubArrayLength(4, [1,4,4]));
 console.log(minSubArrayLength(11, [1,1,1,1,1,1,1,1]));
+
+//Summary: Since we are looking for the min size subarray that is greater than or equal to the target, we can start iterating through the array until we have a sum total that is >= target. Once we do, while the sum >= target, we can move a left pointer compressing the size of the subarray, keeping the minimum size each time until we no longer have sum >= target. 
+//Pattern: Two pointers, or a for loop with a left pointer. Also, use of the MAX_SAFE_INTEGER for the answer, taking the min each time, or never having a min and the max safe integer will remain and we can return 0.
