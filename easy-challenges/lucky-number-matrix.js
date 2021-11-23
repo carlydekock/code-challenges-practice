@@ -37,3 +37,6 @@ console.log(luckyNumbers(matrix));
 console.log(luckyNumbers(matrix2));
 console.log(luckyNumbers(matrix3));
 console.log(luckyNumbers(matrix4));
+
+//Summary: First, we need to identify the minimum value in each row. Using nested for loops we can iterate over the rows and columns to verify both the min value, and the index or position at which point the min value occurs in that row. With that, before we get back to the outer loop, we can check the values at that same index in the rows (the column, at the index of the min value). If there is never a value that is greater than the min, it is the max value in the column and we have a lucky number. We can push the lucky number into our results array.
+//Pattern: Matrix, therefore nested for loops to loop through, with a min and index variable. The key here was the additional for loop before breaking out and going to the next row of checking the column, and having a type of flag or marker for isMax. Once hat min value is no longer the max in the column, isMax becomes false and we can break out of the loop.
