@@ -19,3 +19,5 @@ const matrix2 = [[1,2,3],[4,5,6]];
 
 console.log(transpose(matrix));
 console.log(transpose(matrix2));
+
+//Summary: Need to flip the rows and columns and push into a new matrix. From the original matrix, we want to take the first column, and push it in as the first row in the newMatrix, and continue iterating from there. Outer loop runs for the length of a row, inner for the length of the matrix. Accessing each value in columns, to push into rows by doing matrix[j][i] where i is the outer loop and j is the inner loop.
