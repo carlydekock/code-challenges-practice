@@ -38,3 +38,6 @@ const matrix = [[1,2],[3,4]];
 const matrix2 = [[1,2],[3,4]];
 console.log(matrixReshape(matrix, 1, 4));
 console.log(matrixReshape(matrix2, 2, 4));
+
+//Summary: First, we need to check if the matrix can be reshaped into the new r*c matrix, meaning the current number of elements in the matrix (matrix.length * matrix[0].length) must be exactly equal to the input r*c for the desired new matrix. If they are equivalent, then we need to create a newMatrix to fill. We need to traverse through the original matrix with a nested for loop, putting the values into the newMatrix until we've reached the end of the intended number of columns (c), at which point we need to then move down a row and continue on. 
+//Pattern: Matrix -> nested for loops to traverse, with a specified dimension newMatrix to fill. Need to have counters for the row_num and col_num, to break to a new row when the col_num === c (when we've reached the input number of columns). 
