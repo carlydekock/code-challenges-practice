@@ -9,14 +9,28 @@ function isPalindrome(x) {
   let stringLength = split.length;
   for(let i = 0; i < stringLength/2; i++){
     if(split[i] !== split[stringLength-1-i]){
-      console.log('split[i]', split[i], 'split', split[stringLength - 1 - i]);
       return false;
     }
   }
   return true;
 }
 
-// console.log(isPalindrome(1221));
-// console.log(isPalindrome(122));
-// console.log(isPalindrome(12233221));
+function isPalindromeTwo(x){
+  let string = x.toString();
+  let split = string.split('');
+  let left = 0;
+  let right = split.length -1;
+  while(left <= right){
+    if(split[left] !== split[right]){
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+console.log(isPalindrome(1221));
+console.log(isPalindrome(122));
+console.log(isPalindrome(12233221));
 console.log(isPalindrome(1000021));
