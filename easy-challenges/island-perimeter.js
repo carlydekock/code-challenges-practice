@@ -53,3 +53,5 @@ function islandPerimeter(grid){
 // }
 
 console.log(islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]));
+
+//Summary: In a nested for loop, if we hit a cell that isn't a 0, we run a dfs on that cell incrementing perimeter if applicable. First, we check if there are 0's in the cell to the left and right (col-1 and col+1), and then we check if the row exists for grid[row-1] and check the value for grid[row-1][col], and the same thing for row+1, incrementing perimeter for both if applicable.
