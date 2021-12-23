@@ -36,3 +36,6 @@ console.log(summaryRanges([0,1,2,4,5,7]));
 console.log(summaryRanges([]));
 console.log(summaryRanges([-1]));
 console.log(summaryRanges([0]));
+
+//Summary: We will need to traverse the array, checking if values are consecutive, if nums[index+1] === nums[index]+1. We can run one while loop while our index value is less than nums.length (to traverse the array), and run an inner while loop to run while the values are consecutive, incrementing the index each time until they are no longer consecutive and we break out. Keeping track of our starting value, once we break out of the loop we'll then know what our "ending" value of that range is. We can push the two into an array and then increment our index to keep moving. Once we have the array of ranges, we can run a loop over them to check whether the two values are equal (no consecutive) and we just need to push the value into our result, or whether they are different and we therefore have a range to push in ('2->5') for example. We can push those values into the result array, and then return that array.
+//Pattern: While loop with pointers, and an auxilliary array to store the ranges which we can then turn into a string output.
